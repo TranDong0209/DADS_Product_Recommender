@@ -89,9 +89,15 @@ brands_to_filter = ['OEM', 'Samsung', 'Logitech', 'Sony', 'LG', 'Panasonic', 'Yo
 st.sidebar.title('Menu')
 page = st.sidebar.selectbox('Select a Page', ['Home', 'Product Name', 'Product ID'])
 
-if page == 'Home':
-    st.title('Welcome to the Product Recommendation App')
-    st.write('This app allows you to search for products and get recommendations based on product descriptions.')
+# Trang Product Name
+if page == 'Product Name':
+    st.markdown(
+        """
+        <h1 style='color: blue; font-size: 20px;'>Recommendation by Product Name or Description</h1>
+        """,
+        unsafe_allow_html=True,
+    )
+    query = st.text_input('Enter a Product Name or Description:')
 
 # Trang Product Name
 if page == 'Product Name':
