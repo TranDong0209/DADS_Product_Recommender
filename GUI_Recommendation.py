@@ -192,8 +192,6 @@ if page == 'Product ID':
         recommendations['Product ID'] = recommendations['Product ID'].astype(str).str.replace(',', '')
 
         st.subheader('Recommendations for Product ID: ' + str(selected_product_id))
-        # Hide the index column
-        st.dataframe(recommendations.style.hide_index())
 
 # About section
 st.sidebar.title('About')
