@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run GUI_Recommendation.py
+web: sh setup.sh && streamlit run Product_Recommendation.py
