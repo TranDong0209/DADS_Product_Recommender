@@ -89,18 +89,9 @@ brands_to_filter = ['OEM', 'Samsung', 'Logitech', 'Sony', 'LG', 'Panasonic', 'Yo
 st.sidebar.title('Menu')
 page = st.sidebar.selectbox('Select a Page', ['Home', 'Product Name', 'Product ID'])
 
-# Trang Home
 if page == 'Home':
-    st.markdown(
-        """
-        <h1 style='color: blue; font-size: 26px;'>Welcome to the Product Recommendation App</h1>
-        <p>This app allows you to search for products and get recommendations based on product descriptions.</p>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    # Thêm hình ảnh
-    st.image('Product_image.jpg', use_column_width=True)
+    st.title('Welcome to the Product Recommendation App')
+    st.write('This app allows you to search for products and get recommendations based on product descriptions.')
 
 # Trang Product Name
 if page == 'Product Name':
@@ -139,7 +130,7 @@ if page == 'Product Name':
             results = results.sort_values(by=['list_price'])
         elif sort_by == 'Brand':
             results = results.sort_values(by=['brand'])
-        
+
         # Display recommendations in a grid format
         col1, col2, col3 = st.columns(3)
         products = results.iterrows()
@@ -224,7 +215,7 @@ if page == 'Product ID':
 
         if recommendations.empty:
             st.info('No matching products found.')
-            
+
 # About section
 st.sidebar.title('About')
 st.sidebar.info('This is a product recommendation app using a machine learning model.')
